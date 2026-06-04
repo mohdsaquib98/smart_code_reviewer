@@ -14,7 +14,7 @@ class AICodeReviewer:
         self.gemini_api_key = gemini_api_key or os.getenv('GEMINI_API_KEY')
         if self.gemini_api_key:
             genai.configure(api_key=self.gemini_api_key)
-            self.model = genai.GenerativeModel('gemini-pro')
+            self.model = genai.GenerativeModel('gemini-1.5-flash')
         else:
             self.model = None
         self.custom_instructions = self._load_custom_instructions()
